@@ -105,3 +105,4 @@ venv.bak/
 
 bot/settings.py
 import-verbs/verbs.txt
+import-verbs/verbs_random.txt
