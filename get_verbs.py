@@ -1,6 +1,7 @@
 import requests
 import json
 import time
+import random
 
 BASE_URL="https://fr.wiktionary.org/w/api.php?action=query&cmtitle=Cat%C3%A9gorie:Verbes_du_premier_groupe_en_fran%C3%A7ais&list=categorymembers&format=json&cmlimit=500&cmtype=page&cmnamespace=0"
 
@@ -23,6 +24,14 @@ with open("verbs.txt","w", encoding='utf8') as file:
 		tot += len(r["query"]["categorymembers"])
 		print(str(tot)+" mots")	
 		time.sleep(1)
+
+
+with open('verbs.txt','r', encoding='utf8') as src:
+	data = [ (random.random(), line) for line in src ]
+	data.sort()
+with open('verbs_random.txt','w', encoding='utf8') as trgt:
+	for _, line in data:
+		trgt.write( line )
 
 
 
