@@ -3,8 +3,8 @@ import json
 import time
 import random
 
-#BASE_URL="https://fr.wiktionary.org/w/api.php?action=query&cmtitle=Cat%C3%A9gorie:Verbes_du_premier_groupe_en_fran%C3%A7ais&list=categorymembers&format=json&cmlimit=500&cmtype=page&cmnamespace=0"
-BASE_URL="https://fr.wikipedia.org/w/api.php?action=query&cmtitle=Catégorie:Fruit_alimentaire&list=categorymembers&format=json&cmlimit=500&cmtype=page&cmnamespace=0"
+BASE_URL="https://fr.wiktionary.org/w/api.php?action=query&cmtitle=Cat%C3%A9gorie:Verbes_du_premier_groupe_en_fran%C3%A7ais&list=categorymembers&format=json&cmlimit=500&cmtype=page&cmnamespace=0"
+#BASE_URL="https://fr.wikipedia.org/w/api.php?action=query&cmtitle=Catégorie:Fruit_alimentaire&list=categorymembers&format=json&cmlimit=500&cmtype=page&cmnamespace=0"
 
 with open("verbs.txt","w", encoding='utf8') as file:
 	r = None
