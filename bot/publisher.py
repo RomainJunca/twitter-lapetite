@@ -16,6 +16,6 @@ def publish_tweet(tw):
 		sleep(delay)
 
 	word = pick_word()
-	tweet = tw.update_status(status="J'aime les "+word.lower())
+	tweet = tw.update_status(status=word.title()[:-1]+" la petite")
 	register_published(word,tweet["id"])
 	print("Tweet published")
