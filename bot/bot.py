@@ -1,23 +1,8 @@
-from twython import Twython
-from settings import *
+from authentication import get_authenticated_twitter
+from publisher import publish_tweet
+import time
 
-tw = Twython(APP_KEY, APP_SECRET)
-auth = tw.get_authentication_tokens()
+tw = get_authenticated_twitter()
 
-OAUTH_TOKEN = auth['oauth_token']
-OAUTH_TOKEN_SECRET = auth['oauth_token_secret']
-
-print("Please authorize bot on "+auth['auth_url'])
-OAUTH_PIN = input("PIN code : ")
-
-tw = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
-auth = tw.get_authentication_tokens(OAUTH_PIN)
-
-OAUTH_TOKEN = auth['oauth_token']
-OAUTH_TOKEN_SECRET = auth['oauth_token_secret']
-
-with open("creadentials.txt","w") as creds:
-	creds.write(OAUTH_TOKEN+"\n"+OAUTH_TOKEN_SECRET)
-
-tw.update_status(status="Hello, world !")
-print("Méfais accomplis...")
+while True:
+	publish_tweet(tw)
