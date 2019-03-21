@@ -1,6 +1,5 @@
 from datetime import datetime
 from datetime import timedelta
-import dateutil
 from time import sleep
 from word_manager import pick_word
 from word_manager import register_published

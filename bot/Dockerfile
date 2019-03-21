@@ -1,6 +1,6 @@
 FROM "python"
 
-COPY ./* /home/lapetite/
+COPY . /home/lapetite/
 
 WORKDIR /home/lapetite
 
