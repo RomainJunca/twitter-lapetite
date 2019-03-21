@@ -7,7 +7,7 @@ from settings import TWEET_INTERVAL
 
 def publish_tweet(tw):
 	lastTweets = tw.get_user_timeline()
-	lastTweetDate = datetime.strptime(lastTweets[0]["created_at"],"%a %b %d %H:%M:%S +0000 %Y") + timedelta(hours=2)
+	lastTweetDate = datetime.strptime(lastTweets[0]["created_at"],"%a %b %d %H:%M:%S +0000 %Y")
 	timeSinceLastTweet = datetime.today() - lastTweetDate
 	delay = int(TWEET_INTERVAL - timeSinceLastTweet.total_seconds())
 	if delay > 0:
